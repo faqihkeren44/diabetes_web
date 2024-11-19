@@ -1,11 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask
+from flask import render_template, request
 import pickle
 import pandas as pd
 
 with open("model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
-app = Flask(__name__, template_folder='template')
+app = Flask(__name__)
 
 features = ['blood_glucose_level', 'HbA1c_level', 'age', 'bmi']
 
